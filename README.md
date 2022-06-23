@@ -1,2 +1,23 @@
-# APITest
+# API test with Cypress
  
+## How to run test set
+* make sure you have installed node.js and npm on your computer
+* pull the test from git repository
+* use: npm run test
+
+## Test Cases for https://reqres.in/ :
+
+| Action | Url  Params     | Request                                 | Expected status                                                                                                                                                                                   | Expected Result                        |
+|--------|-----------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
+ | GET    | /api/users?page=2 |                                         |  Status: 200 | Body contains: page, per_page, total, total pages and data values. Data contain list of users with specified parameters: id(integer), email(string), first_name(string), last_name(string) and avatar(string) values | 
+ | GET    | /api/users/2    |                                         | Status: 200 | Body contains: data value. Data contain information for user with id = 2 with specified parameters: id(integer), email(string), first_name(string), last_name(string) and avatar(string) values                      |
+ | GET    | /api/users/23   |                                         | Status: 404 | Empty body                                                                                                                                                                                                           |
+ | POST   | /api/users     | "name": 'string', "job": 'string'       | Status: 201 | Body contains: name(string), job(string), id(string), created date(string)(current date)                                                                                                                             |  
+ | PUT    | /api/users/2 | "name": 'string', "job": 'string'       | Status: 200 | Body contains updated information for user with id = 2 with specified parameters: name(string), job(string), id(string), updated date(string)(current date)                                                          |             
+ | PATCH  |  /api/users/2 | "name": 'string', "job": 'string'       | Status: 200 | Body contains updated information for user with id = 2 with specified parameters: name(string), job(string), id(string), updated date(string)(current date)                                                          |     
+ | DELETE| /api/users/2 |                                         |  Status: 204 | Empty                                                                                                                                                                                                                |
+ | POST | /api/register | "email": 'string', "password": 'string' | Status: 200 | Body contains: id(integer), token(string)                                                                                                                                                                            |
+ | POST | /api/register | "email": 'string'                       | Status: 400 | "error": "Missing password"                                                                                                                                                                                          |
+ | POST | /api/login |  "email": 'string', "password": 'string'   | Status: 200 | Body contains: token(string)                                                                                                                                                                                         |
+| POST | /api/login |    "email": 'string'                  | Status: 400 | "error": "Missing password"                                                                                                                                                                                          |
+| GET    | /api/users?page=2 |                                         | Status: 200 | Body contains: page, per_page, total, total pages and data values. Data contain list of users with specified parameters: id(integer), email(string), first_name(string), last_name(string) and avatar(string) values | 
