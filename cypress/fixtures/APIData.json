@@ -1,0 +1,11 @@
+{
+  "create_user_name": "morpheus",
+  "create_user_job": "leader",
+  "update_user_name": "morpheus",
+  "update_user_job": "zion resident",
+  "register_user_email": "eve.holt@reqres.in",
+  "register_user_password": "pistol",
+  "reqister_only_email": "sydney@fife",
+  "login_email": "eve.holt@reqres.in",
+  "login_password": "cityslicka"
+}
